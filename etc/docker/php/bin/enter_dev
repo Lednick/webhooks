@@ -5,7 +5,7 @@ source /app/etc/docker/php/bin/fix_permissions
 sleep 5
 main
 
-runAsUser "composer install -o -vvv -n"
+runAsUser "composer install -o -vvv -n --ignore-platform-reqs"
 runAsUser "/app/bin/console doc:sc:up --force"
 runAsUser "/app/bin/console ca:cl"
 
